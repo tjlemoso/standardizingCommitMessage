@@ -1,0 +1,28 @@
+{
+  "name": "standardizing-commit-message",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/tjlemoso/standardizingCommitMessage.git",
+  "author": "tjlemoso <tjlemoso@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "commit": "cz"
+  },
+  "dependencies": {
+    "commitizen": "^4.2.0",
+    "husky": "^4.2.5"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "3.2.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
+  }
+}
